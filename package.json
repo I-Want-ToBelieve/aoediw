@@ -1,0 +1,33 @@
+{
+  "name": "aoediw",
+  "version": "0.1.0",
+  "description": "adb on evdev in wayland",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
+    "build-debug": "npm run build --",
+    "build-release": "npm run build -- --release",
+    "install": "npm run build-release",
+    "test": "cargo test"
+  },
+  "author": "i.want.to.believe",
+  "license": "MIT",
+  "devDependencies": {
+    "cargo-cp-artifact": "^0.1"
+  },
+  "keywords": [
+    "evdev",
+    "wayland",
+    "adb",
+    "global-event"
+  ],
+  "dependencies": {
+    "@devicefarmer/adbkit": "^3.2.4",
+    "bluebird": "^3.7.2",
+    "dayjs": "^1.11.8",
+    "input-event": "^1.2.6",
+    "p-limit": "^4.0.0",
+    "p-throttle": "^5.1.0"
+  }
+}
